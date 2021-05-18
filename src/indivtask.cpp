@@ -31,20 +31,20 @@ IndivTask::IndivTask(string daysOfWeek, bool recurring, string title, string gro
 	++nextId;
 }
 
-void IndivTask::markComplete(int id) {
+bool IndivTask::markComplete(int id) {
 	if (id < nextId && id > 0) {
 		this->complete = true;
 	} 
 }
 
-void IndivTask::remove(int id) {
+/* void IndivTask::remove(int id) {
 	
 }
 
 string IndivTask::printToDo() {
 	
 }
-
+*/
 void IndivTask::modifyTask(string daysOfWeek, bool recurring, string title, string group){		
 	this->daysOfWeek = daysOfWeek;
         this->recurring = recurring;

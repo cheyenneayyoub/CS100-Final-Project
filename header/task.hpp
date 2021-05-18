@@ -17,14 +17,14 @@ class Task {
 		string group;
 		bool complete;
 
-		Task() { }
+//		Task(string daysOfWeek, bool recurring, string title, string group) {};
 
 		//virtual ~Task() {}
-
-		virtual bool checkCompletion(int id) = 0;
-		virtual string printToDo() = 0;
+	
+		virtual bool markComplete(int id) = 0;
+//		virtual string printToDo() = 0;
 		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group, int id) = 0;
-		virtual void remove(int id) = 0;
+//		virtual void remove(int id) = 0;
 };
 
 #endif //__TASK_HPP__

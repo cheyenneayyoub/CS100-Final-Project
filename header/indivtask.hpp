@@ -23,11 +23,11 @@ class IndivTask : public Task {
 
 		IndivTask(string daysOfWeek, bool recurring, string title, string group);
 
-		//virtual ~IndivTask() {}
+		virtual ~IndivTask() {}
 		
-		virtual void remove(int id);
-		virtual void markComplete(int id);
-		virtual string printToDo();
+	//	virtual void remove(int id);
+		virtual bool markComplete(int id);
+	//	virtual string printToDo();
 		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group);		
 };
 
