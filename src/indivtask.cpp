@@ -5,36 +5,48 @@ using namespace std;
 
 int IndivTask::nextId = 1;
 
-IndivTask::IndivTask(string daysOfWeek, bool recurring, string title, string group) {
-	//enter days with commas separating them "m,t,w"
-	/*
-	if(daysOfWeek.find(",")){
-		vector<string> output;
-        	stringstream s(daysOfWeek);
-        	while(s.good()){
-                	string substr;
-                	getline(s, substr, ',');
-                	output.push_back(substr);
-        	}
-        	for(int i = 0; i < output.size(); ++i){
-                	this->daysOfWeek = output.at(i); //overwrites the day
-        	}
-	}	
-	*/
+IndivTask::IndivTask(bool dow[], int dow_size, string title, string group) {
+	vector<string> dowVector;
+    	if (dow_size != 7) {
+        	throw std::invalid_argument("Something went wrong");
+    	}
+    
+    	map<int,string> days;
+    	days[0] = "M";
+    	days[1] = "T";
+    	days[2] = "W";
+    	days[3] = "Th";
+    	days[4] = "F";
+    	days[5] = "S";
+    	days[6] = "Su"; 
+	int arrLen = 0;    	
 
-	this->daysOfWeek = daysOfWeek;
-	this->recurring = recurring;
+    	for (int i=0; i<7; i++) {
+        	if (dow[i]) {
+			dowVector.push_back(days[i]);
+        	}	
+        
+        	else if (!dow[i]){ 
+            		continue;
+        	}
+        
+        
+        	else {
+            		throw std::invalid_argument("Something went wrong");
+        	}
+            
+    	}
+	
+	for (int i=0; i<dowVector.size(); i++) {
+		this->daysOfWeek += dowVector[i];
+	}
+	
 	this->title = title;
 	this->group = group;
 	this->complete = false;
-	this->id = nextId;
-	++nextId;
 }
 
-void IndivTask::markComplete(int id) {
-	if (id < nextId && id > 0) {
-		this->complete = true;
-	} 
+void IndivTask::markComplete() {
 }
 
 void IndivTask::remove(int id) {
@@ -45,7 +57,7 @@ string IndivTask::printToDo() {
 	
 }
 
-void IndivTask::modifyTask(string daysOfWeek, bool recurring, string title, string group){		
+void IndivTask::modifyTask(bool dow[], int dow_size, string title, string group){		
 	this->daysOfWeek = daysOfWeek;
         this->recurring = recurring;
         this->title = title;
