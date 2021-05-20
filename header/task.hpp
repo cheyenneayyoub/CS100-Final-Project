@@ -10,20 +10,16 @@ class Task {
 	public:
 //		Strategy* sort;
 		string daysOfWeek;
-		static int nextId;
-		int id;
 		string title;
-		bool recurring;
-		string group;
 		bool complete;
-
+		string group;
 
 		//virtual ~Task() {}
 
-		virtual void markComplete(int id) = 0;
+		virtual void markComplete() = 0;
 		virtual string printToDo() = 0;
-		virtual void modifyTask(string daysOfWeek, bool recurring, string title, string group) = 0;
-		virtual void remove(int id) = 0;
+		virtual void modifyTask(bool dow[], int dow_size, string title, string group) = 0;
+		virtual void remove() = 0;
 };
 
 #endif //__TASK_HPP__
