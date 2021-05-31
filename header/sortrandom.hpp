@@ -7,7 +7,7 @@
 #include <ctime>        
 #include <cstdlib>      
 #include <string>
-//using namespace std;
+//based on Sid's code
 
 class Sort_Random: public Order {
 	public:
