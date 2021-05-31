@@ -14,7 +14,7 @@ class Sort_Random: public Order {
 	Strategy* item3;
 	unsigned int i;
 
-//version_1---------------------------------------------------	
+
 
 	void swap(int x, int y) { 
 		srand(unsigned(time(NULL)));
