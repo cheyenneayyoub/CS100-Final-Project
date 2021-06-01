@@ -20,8 +20,6 @@ We will be using the Composite design pattern in order to address the issue on h
 We'll also be using the Strategy design pattern to allow the user to output tasks in certain categories. For example, users will be able to filter tasks by the type of task or when the task is due. Without implementing this design pattern, we would have to include functions in each class to provide various types of output, which is more tedious to implement than using the Strategy design pattern. With this design pattern, we can easily extract only the information we want from each task and easily include various search and filter algorithms rather than keeping redundant or hard to implement code.
 
 ## Class Diagram
- > Include a class diagram(s) for each design pattern and a description of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper OMT notation (as discussed in the course slides). You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description). 
-
 ![_priorities_ class diagram](https://user-images.githubusercontent.com/79485389/120388042-7ae11900-c2df-11eb-962e-489158e83fa8.jpeg)
  
  ## Screenshots
